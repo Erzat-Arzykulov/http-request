@@ -15,16 +15,13 @@ public class PcController {
     public PcController(PcService pcService) {
         this.pcService = pcService;
     }
-
-    @GetMapping
-    public String x (){
-        return "f4f4f4f4f4f4f4";
-    }
+    
 
     @GetMapping("/task1/{price}")
     public List<ModelSpeedHdDto1> findModelSpeedHdByPriceLess(@PathVariable double price ){
         return pcService.findModelSpeedHdDtoByPriceLess(price);
     }
+
 
 
 }

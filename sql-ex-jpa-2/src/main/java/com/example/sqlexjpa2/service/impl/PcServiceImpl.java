@@ -24,9 +24,9 @@ public class PcServiceImpl implements PcService {
     public List<ModelSpeedHdDto1> findModelSpeedHdDtoByPriceLess(double price) {
         List<Pc> pcs = pcRepo.findAllByPriceLessThan(price);
         List<ModelSpeedHdDto1> modelSpeedHdDto1s = new ArrayList<>();
-        pcs.stream()
-                .forEach(System.out::println);
+        pcs.stream().forEach(System.out::println);
 
         return modelSpeedHdDto1s;
     }
+
 }
