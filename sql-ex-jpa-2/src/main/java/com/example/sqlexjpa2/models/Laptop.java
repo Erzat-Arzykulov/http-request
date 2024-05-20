@@ -1,25 +1,24 @@
 package com.example.sqlexjpa2.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
-@Entity
-@Table(name = "laptops")
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@AllArgsConstructor
+
+@Entity
+@Table(name = "laptops")
 public class Laptop {
+
     @Id
     @Column(name = "code")
     Integer id;
-
-    String model;
 
     int speed;
 
@@ -32,7 +31,8 @@ public class Laptop {
 
     int screen;
 
-
-
+    @ManyToOne
+    @JoinColumn(name = "model")
+    Product product;
 
 }

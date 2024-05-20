@@ -1,16 +1,17 @@
 package com.example.sqlexjpa2.models;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-@Entity
-@Table(name = "printers")
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@AllArgsConstructor
+@NoArgsConstructor
+
+@Entity
+@Table(name = "printers")
 public class Printer {
 
     @Id

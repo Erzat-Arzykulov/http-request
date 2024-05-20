@@ -1,13 +1,13 @@
 package com.example.sqlexjpa2.controller;
 
-import com.example.sqlexjpa2.models.dtos.ModelSpeedHdDto1;
+import com.example.sqlexjpa2.models.dtos.ModelSpeedHdDto;
 import com.example.sqlexjpa2.service.PcService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/pc")
+@RequestMapping("/api")
 public class PcController {
 
     private final PcService pcService;
@@ -15,10 +15,10 @@ public class PcController {
     public PcController(PcService pcService) {
         this.pcService = pcService;
     }
-    
 
     @GetMapping("/task1/{price}")
-    public List<ModelSpeedHdDto1> findModelSpeedHdByPriceLess(@PathVariable double price ){
+    @ResponseBody
+    public List<ModelSpeedHdDto> findModelSpeedHdByPriceLess(@PathVariable double price ){
         return pcService.findModelSpeedHdDtoByPriceLess(price);
     }
 

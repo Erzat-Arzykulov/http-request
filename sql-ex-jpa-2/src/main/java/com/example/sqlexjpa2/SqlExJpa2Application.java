@@ -12,9 +12,6 @@ import java.net.InetSocketAddress;
 @SpringBootApplication
 public class  SqlExJpa2Application {
 
-    public SqlExJpa2Application() throws IOException {
-    }
-
     public static void main(String[] args) {
 		SpringApplication.run(SqlExJpa2Application.class, args);
 	}
